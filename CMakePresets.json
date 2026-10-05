@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "debug (trabajar y depurar)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "MINIDB_ASAN": "OFF" }
+    },
+    {
+      "name": "asan",
+      "displayName": "asan (AddressSanitizer)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/asan",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "MINIDB_ASAN": "ON" }
+    },
+    {
+      "name": "exp",
+      "displayName": "exp (-O2: tiempos y carga grande)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/exp",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "MINIDB_ASAN": "OFF" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "debug", "configurePreset": "debug" },
+    { "name": "asan",  "configurePreset": "asan" },
+    { "name": "exp",   "configurePreset": "exp" }
+  ]
+}

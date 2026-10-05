@@ -1,0 +1,12 @@
+build/
+cmake-build-*/
+.idea/
+minidb
+minidb_asan
+minidb_exp
+minidb_experimentos
+*.exe
+*.dll
+*.pdb
+*.dSYM/
+cargas/grande.txt
